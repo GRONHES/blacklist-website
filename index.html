@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacklist Mobile | Competitive Mobile FPS</title>
+    <title>Blacklist Mobile | SPN Games</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0b0b; color: #fff; text-align: center; overflow-x: hidden; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; }
-        h1 { font-size: 4rem; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 10px; color: #ff4b2b; text-shadow: 0 0 20px rgba(255,75,43,0.5); }
-        p { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; }
-        .cta-button { padding: 15px 40px; background: #ff4b2b; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; box-shadow: 0 4px 15px rgba(255,75,43,0.4); }
-        .cta-button:hover { background: #ff416c; transform: scale(1.05); }
-        footer { position: absolute; bottom: 20px; width: 100%; font-size: 0.9rem; color: #555; }
-        footer a { color: #888; text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: #fff; }
+        
+        /* Arka plan resmi ve karartma ayarı */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://raw.githubusercontent.com/GRONHES/blacklist-website/main/blacklistmobilewalpaper.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+        }
+
+        h1 { font-size: 4.5rem; text-transform: uppercase; letter-spacing: 8px; margin-bottom: 10px; color: #ff4b2b; text-shadow: 0 0 30px rgba(255,75,43,0.6); font-weight: 900; }
+        p { font-size: 1.4rem; color: #eee; margin-bottom: 35px; letter-spacing: 1px; }
+        
+        .cta-button { 
+            padding: 18px 50px; 
+            background: #ff4b2b; 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            transition: 0.4s; 
+            box-shadow: 0 5px 20px rgba(255,75,43,0.5);
+            text-transform: uppercase;
+        }
+        .cta-button:hover { background: #ff2a00; transform: scale(1.08); box-shadow: 0 0 40px rgba(255,75,43,0.8); }
+        
+        footer { position: absolute; bottom: 30px; width: 100%; font-size: 1rem; color: #777; }
+        footer a { color: #ff4b2b; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
+        footer a:hover { color: #fff; text-shadow: 0 0 10px #fff; }
+        .copyright { margin-bottom: 10px; display: block; color: #555; }
     </style>
 </head>
 <body>
@@ -25,8 +52,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Blacklist Mobile Team</p>
-        <a href="/privacy">Privacy Policy</a> | <a href="#">Support</a>
+        <span class="copyright">&copy; 2026 SPN Games. All Rights Reserved.</span>
+        <a href="privacy.html">Privacy Policy</a> 
+        <a href="mailto:spngames77@gmail.com">Support</a>
     </footer>
 </body>
 </html>
