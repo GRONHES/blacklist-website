@@ -6,25 +6,54 @@
     <title>Blacklist Mobile | SPN Games</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0b0b; color: #fff; text-align: center; overflow-x: hidden; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0b0b; color: #fff; text-align: center; overflow: hidden; }
         
-        .hero { 
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+        /* Sinematik Arka Plan Konteynırı */
+        .hero-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Hareket eden fotoğraf katmanı */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: -10%; /* Hareket alanı için resmi biraz taşırdık */
+            width: 120%; /* Resmin kesilmemesi için genişlettik */
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
                         url('https://raw.githubusercontent.com/GRONHES/blacklist-website/main/blacklistmobilewalpaper.png'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            /* Animasyon Ayarı: 20 saniyede bir tur, sonsuz döngü, yumuşak geçiş */
+            animation: panBackground 25s ease-in-out infinite alternate;
+        }
+
+        /* Sağa sola yavaş salınım animasyonu */
+        @keyframes panBackground {
+            0% { transform: translateX(0) scale(1); }
+            100% { transform: translateX(5%) scale(1.05); } /* Hem yana kayar hem çok hafif yaklaşır */
+        }
+
+        /* İçerik Katmanı */
+        .content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         h1 { font-size: 4.5rem; text-transform: uppercase; letter-spacing: 8px; margin-bottom: 10px; color: #ff4b2b; text-shadow: 0 0 30px rgba(255,75,43,0.6); font-weight: 900; }
         p { font-size: 1.4rem; color: #eee; margin-bottom: 35px; letter-spacing: 1px; }
         
-        /* Butonun tıklanamaz (statik) hali */
         .cta-button { 
             padding: 18px 50px; 
             background: #ff4b2b; 
@@ -34,17 +63,21 @@
             border-radius: 4px; 
             box-shadow: 0 5px 20px rgba(255,75,43,0.5);
             text-transform: uppercase;
-            cursor: default; /* El işareti çıkmasın, normal kalsın */
+            cursor: default;
         }
         
-        footer { position: absolute; bottom: 30px; width: 100%; font-size: 1rem; color: #777; }
+        footer { position: absolute; bottom: 30px; width: 100%; font-size: 1rem; color: #777; z-index: 2; }
         footer a { color: #ff4b2b; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
         footer a:hover { color: #fff; text-shadow: 0 0 10px #fff; }
         .copyright { margin-bottom: 10px; display: block; color: #555; }
     </style>
 </head>
 <body>
-    <section class="hero">
+    <div class="hero-container">
+        <div class="hero-bg"></div>
+    </div>
+
+    <section class="content">
         <h1>Blacklist Mobile</h1>
         <p>The Next Generation of Competitive Mobile FPS</p>
         <span class="cta-button">COMING SOON</span>
